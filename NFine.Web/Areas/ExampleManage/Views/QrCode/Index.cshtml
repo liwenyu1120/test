@@ -1,0 +1,71 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Form.cshtml";
+}
+<link href="~/Content/css/qrcode.css" rel="stylesheet" />
+<script src="~/Content/js/qrcode/jquery-qrcode.js"></script>
+<script src="~/Content/js/qrcode/scripts.js"></script>
+<body>
+    <div id="container">
+    </div>
+    <div class="control left">
+
+        <label for="render">渲染模式</label>
+        <select id="render">
+            <option value="canvas" selected="selected">canvas</option>
+            <option value="image">image</option>
+            <option value="div">div</option>
+        </select>
+        <hr>
+        <label for="size">大小:</label>
+        <input id="size" type="range" value="400" min="100" max="1000" step="50">
+        <label for="fill">填充色</label>
+        <input id="fill" type="color" value="#333333">
+        <label for="background">背景色</label>
+        <input id="background" type="color" value="#ffffff">
+        <label for="text">内容</label>
+        <textarea id="text">https://larsjung.de/jquery-qrcode/</textarea>
+        <hr>
+        <label for="minversion">色填密度:</label>
+        <input id="minversion" type="range" value="6" min="1" max="10" step="1">
+        <label for="eclevel">容错率</label>
+        <select id="eclevel">
+            <option value="L">L - Low (7%)</option>
+            <option value="M">M - Medium (15%)</option>
+            <option value="Q">Q - Quartile (25%)</option>
+            <option value="H" selected="selected">H - High (30%)</option>
+        </select>
+        <label for="quiet">外边距:</label>
+        <input id="quiet" type="range" value="1" min="0" max="4" step="1">
+        <label for="radius">形状(液态——直角——圆点):</label>
+        <input id="radius" type="range" value="50" min="0" max="50" step="10">
+    </div>
+    <div class="control right">
+        <label for="mode">模式</label>
+        <select id="mode">
+            <option value="0">0 - Normal</option>
+            <option value="1">1 - 标签条</option>
+            <option value="2" selected="selected">2 - 标签框</option>
+            <option value="3">3 - 图像条</option>
+            <option value="4">4 - 图像框</option>
+        </select>
+        <hr>
+        <label for="msize">字体大小:</label>
+        <input id="msize" type="range" value="11" min="0" max="40" step="1">
+        <label for="mposx">位置 X:</label>
+        <input id="mposx" type="range" value="50" min="0" max="100" step="1">
+        <label for="mposy">位置 Y:</label>
+        <input id="mposy" type="range" value="50" min="0" max="100" step="1">
+        <hr>
+        <label for="label">Logo文字</label>
+        <input id="label" type="text" value="jQuery.qrcode">
+        <label for="font">Logo字体</label>
+        <input id="font" type="text" value="Ubuntu">
+        <label for="fontcolor">字体颜色</label>
+        <input id="fontcolor" type="color" value="#ff9818">
+        <hr>
+        <label for="image">IMAGE</label>
+        <input id="image" type="file">
+    </div>
+    <img id="img-buffer" src="dummy.png">
+</body>
